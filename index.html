@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Салон красоты Elegance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Elegance</div>
+            <ul class="nav-links">
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#masters">Мастера</a></li>
+                <li><a href="#booking">Онлайн-запись</a></li>
+                <li id="authLinks">
+                    <a href="auth/index.html" class="auth-link" id="loginLink">Войти</a>
+                </li>
+                <li id="userInfo" style="display: none;">
+                    <span id="userName"></span>
+                    <a href="#" onclick="logout()" class="auth-link">Выйти</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Салон красоты Elegance</h1>
+        <p>Создаем красоту с любовью к деталям</p>
+    </section>
+
+    <section id="services">
+        <h2>Услуги и цены</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=500" alt="Стрижка">
+                <h3>Стрижки</h3>
+                <p>Профессиональные стрижки для любого типа волос</p>
+                <span class="price">от 2000 ₽</span>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500" alt="Окрашивание">
+                <h3>Окрашивание</h3>
+                <p>Современные техники окрашивания</p>
+                <span class="price">от 3500 ₽</span>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500" alt="Маникюр">
+                <h3>Маникюр</h3>
+                <p>Маникюр и дизайн ногтей</p>
+                <span class="price">от 1500 ₽</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="masters">
+        <h2>Наши мастера</h2>
+        <div class="masters-grid">
+            <div class="master-card">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500" alt="Анна">
+                <h3>Анна</h3>
+                <p>Стилист-парикмахер</p>
+                <div class="reviews">
+                    <span class="stars">★★★★★</span>
+                    <span class="review-count">42 отзыва</span>
+                </div>
+            </div>
+            <div class="master-card">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500" alt="Мария">
+                <h3>Мария</h3>
+                <p>Колорист</p>
+                <div class="reviews">
+                    <span class="stars">★★★★★</span>
+                    <span class="review-count">38 отзывов</span>
+                </div>
+            </div>
+            <div class="master-card">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500" alt="Елена">
+                <h3>Елена</h3>
+                <p>Мастер маникюра</p>
+                <div class="reviews">
+                    <span class="stars">★★★★★</span>
+                    <span class="review-count">56 отзывов</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking">
+        <h2>Онлайн-запись</h2>
+        <form id="booking-form">
+            <div class="form-group">
+                <label for="service">Услуга:</label>
+                <select id="service" name="service" required>
+                    <option value="">Выберите услугу</option>
+                    <option value="haircut">Стрижка</option>
+                    <option value="coloring">Окрашивание</option>
+                    <option value="manicure">Маникюр</option>
+                </select>
+            </div>
+            <div class="form-group price-container">
+                <label>Стоимость услуги:</label>
+                <div id="price" class="price-display"></div>
+            </div>
+            <div class="form-group">
+                <label for="master">Мастер:</label>
+                <select id="master" name="master" required>
+                    <option value="">Выберите мастера</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Дата:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Время:</label>
+                <select id="time" name="time" required>
+                    <option value="">Выберите время</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <button type="submit">Записаться</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Контакты</h3>
+                <p>Адрес: ул. Примерная, 123</p>
+                <p>Телефон: +7 (999) 123-45-67</p>
+                <p>Email: info@elegance.ru</p>
+            </div>
+            <div class="working-hours">
+                <h3>Часы работы</h3>
+                <p>Пн-Пт: 9:00 - 20:00</p>
+                <p>Сб-Вс: 10:00 - 18:00</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
